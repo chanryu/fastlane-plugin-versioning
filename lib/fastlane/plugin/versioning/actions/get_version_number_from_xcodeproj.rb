@@ -52,7 +52,7 @@ module Fastlane
       end
 
       def self.get_version_number_using_scheme(params)
-        config = { project: params[:xcodeproj], scheme: params[:scheme], configuration: params[:build_configuration_name] }
+        config = { project: params[:xcodeproj], scheme: params[:scheme], configuration: params[:build_configuration_name], skip_package_dependencies_resolution: true }
         project = FastlaneCore::Project.new(config)
         project.select_scheme
 
